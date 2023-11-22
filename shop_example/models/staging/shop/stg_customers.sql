@@ -4,6 +4,6 @@ with source as (
 
 select 
     id as customer_id,
-    name as customer_name,
+    {{to_lowercase('name')}} as customer_name,
     age as customer_age
 from source
