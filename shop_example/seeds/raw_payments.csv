@@ -5,4 +5,4 @@ id,order_id,amount,type
 4,2,50,cash
 5,3,50,cash
 6,3,50,card
-7,4,20,cash
+7,4,20,bank_transfer
