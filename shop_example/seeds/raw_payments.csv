@@ -1,0 +1,8 @@
+id,order_id,amount,type
+1,1,20,card
+2,1,60,card
+3,1,20,cash
+4,2,50,cash
+5,3,50,cash
+6,3,50,card
+7,4,20,cash
