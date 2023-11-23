@@ -1,0 +1,2 @@
+CREATE DATABASE dbttest;
+CREATE SCHEMA shop;
