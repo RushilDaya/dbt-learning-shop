@@ -37,5 +37,5 @@ jobs:
     - name: Run dbt tests
       working-directory: shop_example
       run: |
-        dbt run
+        dbt run --profiles-dir tests/test_profile/
         dbt test  --profiles-dir tests/test_profile/
