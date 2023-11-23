@@ -37,4 +37,4 @@ jobs:
     - name: Run dbt tests
       working-directory: shop_example
       run: |
-        dbt test --select "macros.*"
+        dbt test --select "macros.*" --profiles-dir tests/test_profile

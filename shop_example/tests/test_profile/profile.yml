@@ -1,0 +1,12 @@
+shop_example:
+  outputs:
+    dev:
+      dbname: dbttest
+      host: localhost
+      pass: postgres
+      port: 5432
+      schema: shop
+      threads: 1
+      type: postgres
+      user: postgres
+  target: dev
