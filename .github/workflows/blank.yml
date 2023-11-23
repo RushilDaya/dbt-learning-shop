@@ -38,4 +38,4 @@ jobs:
       working-directory: shop_example
       run: |
         ls
-        dbt test --select "macros.*" --profiles-dir tests/test_profile/profile.yml
+        dbt test --select "macros.*" --profiles-dir tests/test_profile/
