@@ -1,0 +1,9 @@
+shop_example:
+  target: prd
+  outputs:
+    prd:
+      type: bigquery
+      method: oauth
+      project: dbt-testing-project-rushil
+      dataset: shop
+      threads: 1
