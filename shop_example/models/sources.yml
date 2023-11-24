@@ -2,7 +2,7 @@ version: 1
 
 sources:
   - name: shop
-    database: dbttest
+    database: dbt-testing-project-rushil
     schema: shop
     tables:
       - name: raw_customers
