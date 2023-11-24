@@ -1,0 +1,10 @@
+version: 1
+
+sources:
+  - name: shop
+    database: dbttest
+    schema: shop
+    tables:
+      - name: raw_customers
+      - name: raw_orders
+      - name: raw_payments

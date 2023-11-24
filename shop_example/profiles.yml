@@ -1,6 +1,24 @@
 shop_example:
-  target: prd
+  target: dev
   outputs:
+    dev:
+      dbname: dbttest
+      host: localhost
+      pass: postgres
+      port: 5432
+      schema: shop
+      threads: 1
+      type: postgres
+      user: postgres
+    ci_cd:
+      dbname: dbttest
+      host: localhost
+      pass: postgres
+      port: 5432
+      schema: shop
+      threads: 1
+      type: postgres
+      user: postgres
     prd:
       type: bigquery
       method: oauth

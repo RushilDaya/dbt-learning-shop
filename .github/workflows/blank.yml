@@ -37,6 +37,5 @@ jobs:
     - name: Run dbt tests
       working-directory: shop_example
       run: |
-        dbt seed --profiles-dir tests/test_profile/
-        dbt run --profiles-dir tests/test_profile/
-        dbt test  --profiles-dir tests/test_profile/
+        dbt run --target ci_cd
+        dbt test --target ci_cd
