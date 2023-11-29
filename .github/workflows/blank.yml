@@ -11,6 +11,11 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  PROJECT_ID: rushil-daya
+  REGION: us-west1
+  GAR_LOCATION: us-west1-docker.pkg.dev/rushil-daya/rushil-repo
+
 jobs:
 
   build:
@@ -54,3 +59,10 @@ jobs:
     - name: "Docker auth"
       run: |-
         gcloud auth configure-docker us-west1-docker.pkg.dev --quiet
+
+    - name: Build image
+      run: docker build . --file ../ --tag ${{ env.GAR_LOCATION }}
+      working-directory: ./shop_example
+
+    - name: Push image
+      run: docker push ${{ env.GAR_LOCATION }}
