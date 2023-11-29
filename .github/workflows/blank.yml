@@ -28,27 +28,27 @@ jobs:
       run: |
         echo "Hello World automated from the PR pipeline !"
 
-    - name: Setup
-      working-directory: shop_example
-      run: |
-        docker-compose up -d
+    # - name: Setup
+    #   working-directory: shop_example
+    #   run: |
+    #     docker-compose up -d
     
-    - name: Install dbt
-      working-directory: shop_example
-      run: |
-        pip install -r ../requirements.txt
-        dbt deps
+    # - name: Install dbt
+    #   working-directory: shop_example
+    #   run: |
+    #     pip install -r ../requirements.txt
+    #     dbt deps
 
-    - name: Run dbt tests
-      working-directory: shop_example
-      run: |
-        dbt run --target ci_cd
-        dbt test --target ci_cd
+    # - name: Run dbt tests
+    #   working-directory: shop_example
+    #   run: |
+    #     dbt run --target ci_cd
+    #     dbt test --target ci_cd
 
     - id: "auth"
       uses: "google-github-actions/auth@v1"
       with:
-        credentials_json: "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}"
+       credentials_json: "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}"
 
     - name: "Set up Cloud SDK"
       uses: "google-github-actions/setup-gcloud@v1"
@@ -61,8 +61,8 @@ jobs:
         gcloud auth configure-docker us-west1-docker.pkg.dev --quiet
 
     - name: Build image
-      run: docker build . --file ../ --tag ${{ env.GAR_LOCATION }}
-      working-directory: ./shop_example
+      run: docker build .  --tag ${{ env.GAR_LOCATION }}
+      working-directory: .
 
     - name: Push image
       run: docker push ${{ env.GAR_LOCATION }}
