@@ -2,7 +2,7 @@ shop_example:
   target: dev
   outputs:
     dev:
-      dbname: dbt-testing-project-rushil
+      dbname: rushil-daya
       host: localhost
       pass: postgres
       port: 5432
@@ -11,7 +11,7 @@ shop_example:
       type: postgres
       user: postgres
     ci_cd:
-      dbname: dbt-testing-project-rushil
+      dbname: rushil-daya
       host: localhost
       pass: postgres
       port: 5432
