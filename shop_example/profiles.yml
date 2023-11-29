@@ -22,6 +22,6 @@ shop_example:
     prd:
       type: bigquery
       method: oauth
-      project: dbt-testing-project-rushil
+      project: rushil-daya
       dataset: shop
       threads: 1
