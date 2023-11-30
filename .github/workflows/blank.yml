@@ -28,22 +28,22 @@ jobs:
       run: |
         echo "Hello World automated from the PR pipeline !"
 
-    # - name: Setup
-    #   working-directory: shop_example
-    #   run: |
-    #     docker-compose up -d
+    - name: Setup
+      working-directory: shop_example
+      run: |
+        docker-compose up -d
     
-    # - name: Install dbt
-    #   working-directory: shop_example
-    #   run: |
-    #     pip install -r ../requirements.txt
-    #     dbt deps
+    - name: Install dbt
+      working-directory: shop_example
+      run: |
+        pip install -r ../requirements.txt
+        dbt deps
 
-    # - name: Run dbt tests
-    #   working-directory: shop_example
-    #   run: |
-    #     dbt run --target ci_cd
-    #     dbt test --target ci_cd
+    - name: Run dbt tests
+      working-directory: shop_example
+      run: |
+        dbt run --target ci_cd
+        dbt test --target ci_cd
 
     - id: "auth"
       uses: "google-github-actions/auth@v1"
